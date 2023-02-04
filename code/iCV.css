@@ -1,0 +1,1074 @@
+body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
+.informationPanel{ background-color: #efefef; border-radius: 12px }
+.translucentPanel{
+			border-radius: 12px;
+			background-color: rgba(255, 255, 255, 0.4);
+			margin: 10px;
+			backdrop-filter: blur(17px);
+			-webkit-backdrop-filter: blur(17px)
+		}
+.paragraphText{ color: black }
+.headerText{ color: black }
+
+@media only screen and (min-width: 1000px)
+{
+	#menuBar
+	{
+		position: relative;
+		width: 80%;
+		max-width: 1440px;
+		min-width: 970px;
+		height: 81px;
+		background-color: #efefef;
+		border: 1px solid #efefef;
+		border-bottom: 2px solid #efefef;
+		border-radius: 12px;
+		text-align: center;
+		padding: 0px;
+		margin: auto;
+		margin-top: 5px
+	}
+	#menuTitle
+	{
+		font-weight: bold;
+		margin: 0px;
+		display: block
+		
+	}
+	.menuButton
+	{
+		position: relative;
+		box-sizing: border-box;
+		display: inline-block;
+		width: 25%;
+		height: 62px;
+		margin-left: -2px;
+		margin-right: -2px;
+		border-radius: 12px;
+		background-color: #efefef
+	}
+
+	#profileMenu
+	{
+		background-color: #d9d9d9
+	}
+	.menuButton:hover
+	{
+		background-color: #d9d9d9 !important
+	}
+
+	
+	#contentBody
+	{
+		position: relative;
+		width: 80%;
+		max-width: 1440px;
+		min-width: 970px;
+		margin: auto
+	}
+	#profilePane	{
+		position: relative;
+		max-width: 40%;
+		display: block;
+		margin-right: 10px;
+		margin-top: 18px;
+		float: left;
+		background-color: #efefef;
+		border-radius: 12px
+	}
+	#profileImage
+	{
+		max-width: 100%;
+		display: block;
+		float: left;
+		border-radius: 12px 12px 0 0;
+		margin-bottom: 10px
+	}
+	#profilePane p
+	{
+		text-align: left;
+		font-weight: bold;
+		margin: 10px
+	}
+	#themeToggle
+	{
+		display: inline-block;
+		float: right;
+		margin: 0px
+	}
+	#themeText{ margin: 10px }
+	#profileText
+	{
+		width: 58%;
+		float: right
+	}
+	
+	.project
+	{
+		position: relative;
+		width: 80%;
+		max-width: 1200px;
+		min-width: 970px;
+		margin: auto;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		overflow: auto
+	}
+	.project p
+	{
+		text-align: justify
+	}
+	.project h
+	{
+		font-weight: bold;
+		font-size: 16pt
+	}
+	.project img
+	{
+		position: relative;
+		display: block;
+		width: 195px;
+		float: left;
+		margin-right: 10px
+	}
+		
+	#fullscreenImageContainer
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		z-index: 12;
+		display: none;
+		top: 0px
+	}
+	#currentFullscreenImage
+	{
+		position: absolute;
+		max-width: 100%;
+		height: 100%;
+		object-fit: contain;
+		left: 50%;
+		transform: translate(-50%)
+	}
+	#leftButtonFullscreen
+	{
+		position: absolute;
+		top: 50%;
+		left: 7px;
+		transform: translateY(-50%);
+		z-index: 13
+	}
+	#rightButtonFullscreen
+	{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 7px;
+		z-index: 13
+	}
+	#fullscreenImagXOfY
+	{
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translate(-50%);
+		backdrop-filter: blur(17px);
+		-webkit-backdrop-filter: blur(17px);
+		background-color: rgba(0, 0, 0, 0.4);
+		padding: 10px;
+		border-radius: 12px;
+		color: white;
+		z-index: 13
+	}
+	#closeFullscreenImage
+	{
+		position: absolute;
+		-webkit-backdrop-filter: blur(17px);
+		background-color: rgba(0, 0, 0, 0.4);
+		padding: 10px;
+		border-radius: 12px;
+		color: white;
+		font-weight: bold;
+		right: 15px;
+		top: 15px;
+		z-index: 13
+	}
+	
+	#visualProgressIndicatorContainer
+	{
+		position: absolute;
+		width: 85%;
+		height: 96%;
+		top: 25px;
+		max-width: 1440px;
+		min-width: 970px;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: #efefef;
+		padding: 0px;
+		box-sizing: border-box;
+		border-radius: 12px;
+		z-index: 10;
+		display: none;
+		overflow: auto
+	}
+	#innerVPIContainer
+	{
+		position: absolute;
+		width: 97.6%;
+		height: 94%;
+		background-color: white;
+		margin-left: 1%;
+		margin-top: 40px
+	}
+	#VPIMenuBar
+	{
+		position: absolute;
+		height: 30px;
+		width: 97.6%;
+		margin-left: 1%;
+		margin-top: 4px;
+		text-align: center;
+		font-weight: bold
+	}
+	#closeVPIButton
+	{
+		float: right
+	}
+
+	#fullscreenWindow
+	{
+		position: absolute;
+		width: 85%;
+		top: 25px;
+		max-width: 1440px;
+		min-width: 970px;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: #efefef;
+		padding: 10px;
+		box-sizing: border-box;
+		border-radius: 12px;
+		z-index: 10;
+		display: none;
+		overflow: auto
+	}
+	#fullscreenWindow p
+	{
+		font-size: 14pt;
+		text-align: justify;
+		color: black
+	}
+	#fullscreenWindow h
+	{
+		font-weight: bold;
+		font-size: 24pt; 
+		color: black
+	}
+	#closeFullscreen
+	{
+		float: right
+	}
+	#darkBackground
+	{
+		position: fixed;
+		margin-top: -5px;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		display: none;
+		z-index: 9
+		
+	}
+	#fullscreenImageViewMobile{ display: none }
+	#fullscreenImageViewMobile img {display: none}
+	#fullscreenImageView
+	{
+		position: relative;
+		display: block;
+		width: 35%;
+		float: left;
+		margin-right: 10px;
+		z-index: 11
+	}
+	#fullscreenImageView img
+	{
+		position: relative;
+		width: 100%;
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 0px -2px 0px -1px
+	}
+	#fullscreenButton
+	{
+		float: right;
+		width: 35px
+	}
+	#playButton
+	{
+		float: right;
+		width: 35px
+	}
+	.fullscreenImageButton
+	{
+		position: absolute !important;
+		width: 60px !important;
+		right: 15px;
+		top: 15px;
+		visibility: hidden
+	}
+	
+	#educationContent
+	{
+		position: absolute;
+		margin-top: 5px;
+		width: 100%;
+		clear: both
+	}
+	.eduInfo
+	{
+		width: 50%;
+		float: right;
+		padding: 10px;
+		margin: 10px;
+	}
+	.eduInfo h
+	{
+		text-align: left;
+		font-weight: bold;
+		font-size: 20pt
+	}
+	#dateLabel
+	{
+		position: fixed;
+		padding: 10px;
+		margin: 10px;
+		height: 50px;
+		font-size: 18pt;
+		font-weight: bold;
+		float: left;
+		text-align: center;
+		box-sizing: border-box;
+		-webkit-transition: height 0.6s ease-out;
+		transition: height 0.6s ease-out
+	}
+	.dateRangeList
+	{
+		visibility: hidden;
+		opacity: 0;
+		-webkit-transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
+		transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
+		
+	}
+	.dateRangeList:hover
+	{
+		color: lightgrey !important
+	}
+	#topArrow
+	{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		padding: 8px
+	}
+	#bottomArrow
+	{
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		padding: 8px
+	}
+	#eduPane0
+	{
+		display: block
+	}
+	#eduPane1, #eduPane2, #eduPane3
+	{
+		display: none
+	}
+
+	#eduBackground
+	{
+		position: relative;
+		width: 80%;
+		max-width: 1440px;
+		min-width: 970px;
+		top: 90px;
+		display: none;
+		margin-top: 5px;
+		margin: auto
+	}
+
+	#eduBackground img
+	{
+		position: fixed;
+		width: inherit;
+		max-width: 1440px;
+		min-width: 970px
+	}
+
+	#experienceTabs
+	{
+		position: relative;
+		width: 50%;
+		margin: auto;
+		top: 5px;
+		min-width: 150px;
+		max-width: 400px
+	}
+	.tabItem
+	{
+		position: relative;
+		padding: 5px;
+		top: 5px;
+		display: inline-block;
+		box-sizing: border-box;
+		text-align: center;
+		border: 2px solid #daa520;
+		margin: -3px;
+		width: 33%;
+		min-width: 136px;
+		max-width: 300px
+		
+	}
+	
+	#rexperienceTab
+	{
+		border-radius: 5px 0px 0px 5px;
+		background: #daa520;
+		color: white
+	}
+	#skillsTab
+	{
+		border-radius: 0px 0px 0px 0px;
+		color: #daa520
+	}
+	#trainingTab
+	{
+		border-radius: 0px 5px 5px 0px;
+		color: #daa520
+	}
+
+	.rexperienceContent
+	{
+		position: relative;
+		top: 10px;
+		width: 80%;
+		max-width: 1200px;
+		min-width: 970px;
+		margin: auto;
+		background: #efefef;
+		border-radius: 12px;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		box-sizing: border-box
+	}
+	#recentTextContainer
+	{
+		width: 60%;
+		display: inline-block
+	}
+	#recentHeader
+	{
+		font-size: 18pt;
+		font-weight: bold
+	}
+	#recentDate
+	{
+		font-size: 11pt;
+		font-style: italic
+	}
+	#recentText
+	{
+		display: inline-block;
+		text-align: justify;
+		padding-right: 10px
+	}
+	#recentImageContainer
+	{
+		position: relative;
+		width: 39.3%;
+		display: inline-block;
+		vertical-align: top
+	}
+	#recentImage1
+	{
+		position: relative;
+		display: block;
+		width: 100%
+	}
+	#recentImage2
+	{
+		position: relative;
+		display: block;
+		width: 100%;
+		margin-top: 5px
+	}
+	#skillsContent
+	{
+		position: relative;
+		top: 10px;
+		width: 80%;
+		max-width: 1200px;
+		min-width: 970px;
+		margin: auto;
+		background: #efefef;
+		border-radius: 12px;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		box-sizing: border-box
+	}
+	#trainingContent
+	{
+		position: relative;
+		top: 10px;
+		display: none;
+		width: 80%;
+		max-width: 1200px;
+		min-width: 970px;
+		margin: auto;
+		background: #efefef;
+		border-radius: 12px;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		box-sizing: border-box
+	}
+
+}
+
+@media only screen and (max-width: 999px)
+{
+	#menuBar
+	{
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+		height: 50px;
+		background-color: #efefef;
+		text-align: center;
+		margin: 0px;
+		z-index: 10
+	}
+	#menuTitle
+	{
+		display: none
+		
+	}
+	.menuButton
+	{
+		position: relative;
+		box-sizing: border-box;
+		display: inline-block;
+		width: 25%;
+		height: 100%;
+		top: 0px;
+		margin-left: -2px;
+		margin-right: -2px;
+		font-size: 12px;
+		border-radius: 12px
+	}
+	.menuButton img
+	{
+		height: 50px
+	}
+	#profileMenu
+	{
+		background-color: #d9d9d9
+	}
+	.menuButton:hover
+	{
+		background-color: #d9d9d9 !important
+	}
+
+#profilePane	{
+		position: relative;
+		width: 97%;
+		display: block;
+		margin: 5px;
+		box-sizing: border-box;
+		float: left;
+		background-color: #efefef;
+		border-radius: 12px;
+		padding: 5px
+	}
+	#profilePane p
+	{
+		text-align: left;
+		font-weight: bold;
+		margin: 10px
+	}
+	#themeToggle
+	{
+		display: inline-block;
+		float: right;
+		margin: 0px
+	}
+	#themeText{ margin: 10px }
+
+	#profileImage
+	{
+		width: 97%;
+		max-width: 500px;
+		padding: 5px;
+		display: block;
+		border-radius: 15px;
+		margin: auto
+	}
+	#profileImage p
+	{
+		text-align: center;
+		margin: 0px;
+		box-sizing: border-box
+	}
+	#profileText
+	{
+		padding: 5px;
+		box-sizing: border-box
+	}
+
+	.project
+	{
+		position: relative;
+		width: 95%;
+		box-sizing: border-box;
+		border: 1px solid #efefef;
+		margin: auto;
+		margin-top: 10px;
+		padding: 10px;
+		overflow: auto
+	}
+	.project img
+	{
+		position: relative;
+		display: block;
+		width: 100%;
+		margin-right: 10px;
+		margin-bottom: 5px;
+		margin-top: 5px
+	}
+	
+	#visualProgressIndicatorContainer
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: #efefef;
+		padding: 0px;
+		box-sizing: border-box;
+		border-radius: 0px;
+		z-index: 10;
+		display: none;
+		margin-top: -10px;
+		overflow: auto
+	}
+	#innerVPIContainer
+	{
+		position: absolute;
+		width: 100%;
+		height: 93%;
+		background-color: white;
+		border: 0px;
+		margin-top: 38px
+	}
+	#VPIMenuBar
+	{
+		position: absolute;
+		height: 30px;
+		width: 97.6%;
+		margin-left: 1%;
+		margin-top: 4px;
+		text-align: center;
+		font-weight: bold
+	}
+	#closeVPIButton
+	{
+		float: right;
+		margin: 0px
+	}
+
+	#fullscreenWindow
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		margin-top: -10px;
+		background-color: black;
+		padding: 10px;
+		box-sizing: border-box;
+		z-index: 10;
+		display: none;
+		border-radius: 0px !important;
+		overflow: auto
+	}
+	#fullscreenWindow p
+	{
+		font-size: 14pt;
+		text-align: justify;
+		color: white
+	}
+	#fullscreenWindow h
+	{
+		font-weight: bold;
+		font-size: 24pt; 
+		color: white
+	}
+	#closeFullscreen
+	{
+		float: right
+	}
+	#fullscreenImageView{ display: none }
+	#fullscreenImageView img { display: none }
+	#fullscreenImageViewMobile
+	{
+		position: relative;
+		display: block;
+		width: 100%;
+		float: bottom;
+		border-radius: 0px;
+		z-index: 11
+	}
+	#fullscreenImageViewMobile img
+	{
+		position: relative;
+		width: 100%;
+		display: inline-block;
+		box-sizing: border-box;
+		margin: 0px -2px 0px -1px
+	}
+	#fullscreenButton
+	{
+		float: right;
+		width: 35px
+	}
+	#playButton
+	{
+		float: right;
+		width: 35px
+	}
+
+	#educationContent
+	{
+		position: absolute;
+		margin-top: 5px;
+		width: 100%;
+		clear: both
+	}
+	.eduInfo
+	{
+		position: relative;
+		width: 95%;
+		top: 80px;
+		padding: 10px;
+		margin: auto;
+		margin-bottom: 10px;
+		box-sizing: border-box;
+	}
+	.eduInfo h
+	{
+		text-align: left;
+		font-weight: bold;
+		font-size: 20pt
+	}
+	#dateLabel
+	{
+		position: relative;
+		width: 95%;
+		padding: 10px;
+		margin: auto;
+		margin-top: 10px;
+		text-align: center;
+		box-sizing: border-box;
+		height: 50px;
+		font-size: 18pt;
+		font-weight: bold;
+		-webkit-transition: height 0.6s ease-out;
+		transition: height 0.6s ease-out;
+	}
+	.dateRangeList
+	{
+		visibility: hidden;
+		opacity: 0;
+		-webkit-transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
+		transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
+		
+	}
+	.dateRangeList:hover
+	{
+		color: gray !important
+	}
+	#topArrow
+	{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		padding: 8px
+	}
+	#bottomArrow
+	{
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		padding: 8px
+	}
+	#eduPane0
+	{
+		display: block
+	}
+	#eduPane1, #eduPane2
+	{
+		display: none
+	}
+	
+	#eduBackground
+	{
+		position: relative;
+		width: 80%;
+		z-index: -2;
+		max-width: 1440px;
+		min-width: 970px;
+		display: none;
+	}
+	
+	#eduBackground img
+	{	
+		position: fixed;
+		width: inherit;
+		max-width: 1440px;
+		min-width: 970px
+	}
+
+
+	#experienceTabs
+	{
+		position: relative;
+		width: 97%;
+		margin: auto;
+		border-radius: 5px;
+		top: 5px;
+		left: 4px;
+		min-width: 150px;
+		max-width: 400px
+	}
+	.tabItem
+	{
+		position: relative;
+		padding: 5px;
+		top: 5px;
+		display: inline-block;
+		box-sizing: border-box;
+		text-align: center;
+		border: 2px solid #daa520;
+		margin: -3px;
+		width: 33.3%
+		
+	}
+	#rexperienceTab
+	{
+		border-radius: 5px 0px 0px 5px;
+		background: #daa520;
+		color: white
+	}
+	#skillsTab
+	{
+		border-radius: 0px 0px 0px 0px;
+		color: #daa520
+	}
+	#trainingTab
+	{
+		border-radius: 0px 5px 5px 0px;
+		color: #daa520
+	}
+
+	.rexperienceContent
+	{
+		position: relative;
+		top: 10px;
+		width: 97%;
+		margin: auto;
+		background: #efefef;
+		border-radius: 12px;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		box-sizing: border-box
+	}
+	#recentHeader
+	{
+		font-size: 18pt;
+		font-weight: bold
+	}
+	#recentDate
+	{
+		font-size: 11pt;
+		font-style: italic
+	}
+	#recentText
+	{
+		text-align: justify;
+		width: 100%;
+		padding-bottom: 10px
+	}
+	#recentImage1
+	{
+		position: relative;
+		width: 100%
+	}
+	#recentImage2
+	{
+		position: relative;
+		width: 100%
+	}
+	#skillsContent
+	{
+		position: relative;
+		top: 10px;
+		width: 97%;
+		margin: auto;
+		background: #efefef;
+		border-radius: 12px;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		box-sizing: border-box
+	}
+	#trainingContent
+	{
+		position: relative;
+		top: 10px;
+		display: none;
+		width: 97%;
+		margin: auto;
+		background: #efefef;
+		border-radius: 12px;
+		border: 1px solid #efefef;
+		margin-top: 10px;
+		padding: 10px;
+		box-sizing: border-box
+	}
+	
+}
+
+#profileText
+{
+	text-align: justify;
+	white-space: pre-line
+}
+
+#projectsContent
+{
+	display: none
+}
+#educationContent
+{
+	display: none
+}
+#experienceContent
+{
+	display: none
+}
+
+
+.project
+{
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 12px;
+	border: 1px solid #efefef;
+	margin-top: 10px;
+	padding: 10px;
+	overflow: auto
+}
+.project p
+{
+	text-align: justify
+}
+.project h
+{
+	font-weight: bold;
+	font-size: 16pt
+}
+
+
+	#fullscreenImageContainer
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		z-index: 12;
+		display: none;
+		top: 0px
+	}
+	#currentFullscreenImage
+	{
+		position: absolute;
+		max-width: 100%;
+		height: 100%;
+		object-fit: contain;
+		left: 50%;
+		transform: translate(-50%)
+	}
+	#leftButtonFullscreen
+	{
+		position: absolute;
+		top: 50%;
+		left: 7px;
+		transform: translateY(-50%);
+		z-index: 13
+	}
+	#rightButtonFullscreen
+	{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 7px;
+		z-index: 13
+	}
+	#fullscreenImagXOfY
+	{
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translate(-50%);
+		backdrop-filter: blur(17px);
+		-webkit-backdrop-filter: blur(17px);
+		background-color: rgba(0, 0, 0, 0.4);
+		padding: 10px;
+		border-radius: 12px;
+		color: white;
+		z-index: 13
+		
+	}
+#closeFullscreenImage
+	{
+		position: absolute;
+		-webkit-backdrop-filter: blur(17px);
+		background-color: rgba(0, 0, 0, 0.4);
+		padding: 10px;
+		border-radius: 12px;
+		color: white;
+		font-weight: bold;
+		right: 15px;
+		top: 15px;
+		z-index: 13
+	}
+	.fullscreenImageUIElement
+	{
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 0.4s, opacity 0.4s
+	}
+
+#footnote
+{
+	font-weight: bold;
+	font-size: 9pt;
+	width: 70%
+}

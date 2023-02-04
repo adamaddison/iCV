@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+<text x="0" y="15" fill="#f7f7f7" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Projects</text>
+
+<text x="5" y="48" fill="#DAA520" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18pt">{ }</text>
+  <rect x="35" y="25" width="8px" height="33px" fill="#DAA520" />
+  <rect x="28" y="25" width="15px" height="8px" fill="#DAA520" />
+  <polygon points="43,25 43,33 50,33" fill="#DAA520" />
+
+</svg>
