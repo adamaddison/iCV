@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.js"></script>
+	<script src="code/iCV Module.js"></script>
+	<script src="code/iCV Controller.js"></script>
+
+	<link rel="stylesheet" href="code/iCV.css">
+
+	<title>Adam Addison iCV</title>
+</head>
+
+
+<body>
+<div ng-app="iCVModule" ng-controller="iCVController" id="application">  <div id="darkBackground"></div>
+<div id="eduBackground"> <img id="eduPic" src="img/stir.jpg" /> </div>
+
+	<div id="menuBar">
+		<h id="menuTitle" class="headerText" ng-click="testing()">ADAM ADDISON iCV</h>
+		<div class="menuButton" id="profileMenu" ng-click="switchSection(0)"> <img ng-src="{{menuButtonIconFiles[0]}}" /> </div>
+		<div class="menuButton" id="projectsMenu" ng-click="switchSection(1)"> <img ng-src="{{menuButtonIconFiles[1]}}" /> </div>
+		<div class="menuButton" id="educationMenu" ng-click="switchSection(2)"> <img ng-src="{{menuButtonIconFiles[2]}}" /> </div>
+		<div class="menuButton" id="experienceMenu" ng-click="switchSection(3)"> <img ng-src="{{menuButtonIconFiles[3]}}" /> </div>
+	</div>
+
+
+			<div id="fullscreenWindow" class="informationPanel">
+				<div id="fullscreenImageView" ng-keydown="switchProjectImageWithArrowKeys()" tabIndex="0">	
+					<div style="position: relative"> <img ng-src="{{fullscreenVars.imageURL1}}" ng-mouseover="showFullscreenButton(0)" ng-mouseleave="hideFullscreenButton(0)" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 1)" /><img src="icons/fullscreenImage.svg" class="fullscreenImageButton" ng-mouseover="showFullscreenButton(0)" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 1)" /> </div>
+					<div style="position: relative"> <img ng-src="{{fullscreenVars.imageURL2}}" ng-mouseover="showFullscreenButton(1)" ng-mouseleave="hideFullscreenButton(1)"  ng-click="fullscreenProjectImage(fullscreenVars.projectID, 2)" /><img src="icons/fullscreenImage.svg" class="fullscreenImageButton" ng-mouseover="showFullscreenButton(1)" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 2)" /> </div>
+					<div style="position: relative"> <img ng-src="{{fullscreenVars.imageURL3}}" ng-mouseover="showFullscreenButton(2)" ng-mouseleave="hideFullscreenButton(2)"  ng-click="fullscreenProjectImage(fullscreenVars.projectID, 3)" /><img src="icons/fullscreenImage.svg" class="fullscreenImageButton" ng-mouseover="showFullscreenButton(2)" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 3)" /> </div>
+					<div style="position: relative"> <img ng-src="{{fullscreenVars.imageURL4}}" ng-mouseover="showFullscreenButton(3)" ng-mouseleave="hideFullscreenButton(3)"  ng-click="fullscreenProjectImage(fullscreenVars.projectID, 4)" /><img src="icons/fullscreenImage.svg" class="fullscreenImageButton" ng-mouseover="showFullscreenButton(3)" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 4)" /> </div>
+				</div>
+				<img id="closeFullscreen" ng-src="{{closeButtonFile}}" ng-click="exitFullscreen()" />
+				
+				<h class="headerText">{{fullscreenVars.title}}</h>
+				<p ng-bind-html="fullscreenVars.text" class="paragraphText"></p>
+				<div id="fullscreenImageViewMobile" ng-keydown="switchProjectImageWithArrowKeys()" tabIndex="0">	
+					<img ng-src="{{fullscreenVars.imageURL1}}" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 1)" />
+					<img ng-src="{{fullscreenVars.imageURL2}}" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 2)" />
+					<img ng-src="{{fullscreenVars.imageURL3}}" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 3)" />
+					<img ng-src="{{fullscreenVars.imageURL4}}" ng-click="fullscreenProjectImage(fullscreenVars.projectID, 4)" />
+				</div>
+			</div>
+
+			<div id="fullscreenImageContainer" ng-keydown="switchProjectImageWithArrowKeys()" tabIndex="0">
+				<img id="leftButtonFullscreen" src="icons/leftButton.svg" ng-click="switchProjectImage(0)" class="fullscreenImageUIElement" />
+				<img id="rightButtonFullscreen" src="icons/rightButton.svg" ng-click="switchProjectImage(1)" class="fullscreenImageUIElement" />
+				<div id="fullscreenImagXOfY" class="fullscreenImageUIElement">Image {{currentFullscreenImage}} of 4</div>
+				<div id="closeFullscreenImage" class="fullscreenImageUIElement" ng-click="closeFullscreenImage()">Done</div>
+				<img id="currentFullscreenImage" ng-click="hideShowFullscreenControls()" ng-src="{{fullscreenImageFile}}">
+			</div>
+	
+	
+	<div id="contentBody">
+
+		
+		
+		<div id="profileContent">
+			<div id="profilePane" class="informationPanel">
+				<img id="profileImage" ng-src="{{profile.pictureURL}}" />
+				<p class="paragraphText">LinkedIn: adam.addison<br> Email: aaddison524@gmail.com<br></p>
+				<span class="paragraphText" id="themeText">Dark Mode:</span> <img id="themeToggle" ng-click="toggleUITheme()" ng-src="{{toggleSwitchName}}"></img>
+			</div>
+			<p class="paragraphText" id="profileText">{{profile.text}}</p><br><br><br><br>
+		</div>
+		
+		
+		<div id="projectsContent">
+		
+		<!-- the full screen window has been placed outside the project content div so that the width can be relative to the browser window -->
+
+			<div class="informationPanel project" ng-repeat="project in projects"> 	
+				<img id="fullscreenButton" ng-src="{{fullscreenButtonFile}}" ng-click="fullscreen(project.projectID)" />
+				<div id="projectImage"><img ng-src="{{project.imageURL1}}" /></div>
+				<h class="headerText">{{project.title}}</h><br>
+				<p class="paragraphText"><span ng-bind-html="project.previewText"></span> <a href="#" ng-click="fullscreen(project.projectID)">... See More</a> </p>
+			</div>
+			<br><br><br><br>
+		</div>
+		
+		
+		<div id="educationContent">
+			
+			<div id="dateLabel" class="translucentPanel headerText">
+				<span ng-click="expandDateLabel()" ng-mouseover="expandDateLabel()" id="currentSelectedDate">{{currentSelectedDate}}</span>
+				<div class="dateRangeList headerText" ng-click="skipToEducationInstitute($index)" ng-repeat="range in dateRanges">{{range}}<br><br><br></div>
+			</div>
+			
+			<div class="eduInfo translucentPanel" ng-repeat="institute in institutes" id="eduPane{{$index}}"><img id="topArrow" ng-click="switchEducationInstitute(0)" src="icons/up.svg" />	<img id="bottomArrow" ng-click="switchEducationInstitute(1)" src="icons/down.svg" />
+				<h class="headerText" ng-bind-html="institute.name"></h>
+				<p class="paragraphText" ng-repeat="individualGradeModule in institute.moduleAndGrade" ng-bind-html="individualGradeModule"></p><br>
+				<div class="paragraphText" id="footnote">{{institute.footnote}}</div>
+			</div>
+			<br><br><br><br><br><br><br><br><br>
+		</div>
+		
+		
+		<div id="experienceContent">
+			<div id="experienceTabs">
+<div class="tabItem" id="rexperienceTab" ng-click="switchExperienceTabs(0)">Recent</div>
+				<div class="tabItem" id="skillsTab" ng-click="switchExperienceTabs(1)">Skills</div>
+				<div class="tabItem" id="trainingTab" ng-click="switchExperienceTabs(2)">Training</div>
+			</div>
+			
+			<div id="rexperienceContents">
+			<div class="informationPanel paragraphText rexperienceContent" ng-repeat="recent in recentExperience">
+					<div id="recentTextContainer">
+						<span class="headerText" id="recentHeader">{{recent.header}}</span><br>
+						<span class="paragraphText" id="recentDate">{{recent.date}}</span><br><br>
+						<div class="paragraphText" id="recentText">{{recent.text}}</div>
+					</div>
+					<div id="recentImageContainer">
+						<img ng-src="{{recent.imageURL1}}" id="recentImage1"></img>
+						<img ng-src="{{recent.imageURL2}}" id="recentImage2"></img>
+					</div>
+			</div>
+			</div>
+			
+			<div id="skillsContent" class="informationPanel paragraphText" ng-bind-html="skills.text"></div> <div id="blankSpace"><br><br><br><br></div>
+			<div id="trainingContent" class="informationPanel paragraphText" ng-bind-html="training.text"></div><br><br><br><br>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
