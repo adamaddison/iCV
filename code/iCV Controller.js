@@ -29,9 +29,14 @@ appModuleObject.controller("iCVController", function($scope)
 	$scope.UP = 0;
 	$scope.DOWN = 1;
 
+	// These constants represent the open and closed of the education date label in pixels
+	$scope.DATE_LABEL_CLOSED = "50px";
+	$scope.DATE_LABEL_OPEN = "320px";
+
 	// declaring variables representing the current UI theme
 	$scope.toggleSwitchName = "icons/toggleOff.svg";
 	$scope.currentTheme = $scope.LIGHT;
+	$scope.emailImageSrc = "img/emailLight.png";
 	
 	// This variable indicates the number of the currently active fullscreen image for the image x of y label
 	$scope.currentFullscreenImage = 1;
@@ -244,7 +249,7 @@ $scope.dateRanges = ["September 2019 - September 2020", "September 2015 - May 20
 	
 	// This method displays the information of a specified education institute and is used in the date range label picker (rather than using the arrow buttons to incrementally switch between different institutes)
 	$scope.skipToEducationInstitute = function(selectedEducationInstitute)
-	{
+	{		
 		// Assigning the specified institute number to the local variable to indicate the currently displayed educational institute
 		$scope.currentEducationInstituteNumber = selectedEducationInstitute;
 
@@ -373,6 +378,7 @@ $scope.dateRanges = ["September 2019 - September 2020", "September 2015 - May 20
 		{
 			$scope.toggleSwitchName = "icons/toggleOn.svg";
 			$scope.currentTheme = $scope.DARK;
+			$scope.emailImageSrc = "img/emailDark.png";
 			
 			document.getElementById("menuBar").style.backgroundColor="#666666";
 			document.getElementById("menuBar").style.border="1px solid #666666";
@@ -436,6 +442,7 @@ $scope.dateRanges = ["September 2019 - September 2020", "September 2015 - May 20
 		{
 			$scope.toggleSwitchName = "icons/toggleOff.svg";
 			$scope.currentTheme = $scope.LIGHT;
+			$scope.emailImageSrc = "img/emailLight.png";
 
 			document.getElementById("menuBar").style.backgroundColor="#efefef";
 			document.getElementById("menuBar").style.border="1px solid #efefef";
@@ -575,9 +582,9 @@ $scope.dateRanges = ["September 2019 - September 2020", "September 2015 - May 20
 
 	// This method increases the size of the date label in the education section so that it displays all date ranges, so that the user can skip to a specific time range
 	$scope.expandDateLabel = function()
-	{
+	{	
 		// Enlarging the date label to make room to display all date labels
-		document.getElementById("dateLabel").style.height = "321px";
+		document.getElementById("dateLabel").style.height = $scope.DATE_LABEL_OPEN;
 				
 		// Displaying all date ranges (when the user clicks on one of these date ranges the corresponding institute info is displayed)
 		var dateRangeList = document.getElementsByClassName("dateRangeList");
@@ -595,7 +602,7 @@ $scope.dateRanges = ["September 2019 - September 2020", "September 2015 - May 20
 	$scope.collapseDateLabel = function()
 	{
 		// Reducing the size of the date label to fit in only one date label
-		document.getElementById("dateLabel").style.height = "50px";
+		document.getElementById("dateLabel").style.height = $scope.DATE_LABEL_CLOSED;
 				
 		// Hiding all date ranges
 		var dateRangeList = document.getElementsByClassName("dateRangeList");
@@ -704,9 +711,9 @@ $scope.institutes=[
 		  ];
 
 	//			DECLARING DATA STRUCTURES FOR THE EXPERIENCE SECTION
-	$scope.skills = {text: "Adam’s key areas of technical expertise are:<ul><li>Adaptable at learning new programming languages i.e. Java, R, PHP, MySQL, JavaScript + HTML + CSS</li><li>Application of Waterfall and RAD / Agile frameworks for SDLC when modelling programs.</li><li>Application of JavaScript, HTML, CSS and AngularJS to develop web applications</li><li>Strong knowledge of designing and testing graphical and command line programs and using SVN to manage changes and promoting code for delivery.</li><li>Over 7 years’ experience in developing in-house programs using modern programming languages since the age of 14</li></ul>Adam’s key personal skills are:<ul><li>Positive team worker with an eye for detail when developing and designing software programs</li><li>Attention to detail when designing and writing programs (best practice commenting is followed)</li><li>Excellent document presentation skills when designing and communicating programs</li><li>Strong work ethic (Completer/Finisher)</li><li>Excellent problem-solving skills when identifying and overcoming programming errors</li><li>Work closely with my peers to meet and surpass objectives and assist them in their tasks</li><li>Always delivers University assignments ahead of delivery deadlines</li></ul>"};
+	$scope.skills = {text: "Adam’s key areas of technical expertise are:<ul><li>Adaptable at learning new programming languages i.e. Java, R, PHP, MySQL, JavaScript + HTML + CSS</li><li>Application of Waterfall and RAD / Agile frameworks for SDLC when modelling programs.</li><li>Application of JavaScript, HTML, CSS and AngularJS to develop web applications</li><li>Strong knowledge of designing and testing graphical and command line programs and using SVN to manage changes and promoting code for delivery.</li><li>Over 12 years’ experience in developing in-house programs using modern programming languages since the age of 14</li></ul>Adam’s key personal skills are:<ul><li>Positive team worker with an eye for detail when developing and designing software programs</li><li>Attention to detail when designing and writing programs (best practice commenting is followed)</li><li>Excellent document presentation skills when designing and communicating programs</li><li>Strong work ethic (Completer/Finisher)</li><li>Excellent problem-solving skills when identifying and overcoming programming errors</li><li>Work closely with my peers to meet and surpass objectives and assist them in their tasks</li><li>Always delivers University assignments ahead of delivery deadlines</li></ul>"};
 
-	$scope.training = {text: "<ul><li>R Programming for Data Analysis</li><li>Visual Studio 2012</li><li>Notepad++ (to support PHP code development)</li><li>Ecommerce Technologies</li><li>XAMPP</li><li>JIRA for Issue Tracking & Project Management</li><li>HCI</li><li>AppleScript scripting language for automating processes</li><li>Adobe Fireworks for designing program graphics</li><li>Project Planning and Software Development Methodologies (both waterfall and agile)</li><li>AngularJS for building single page web applications</li></ul>"};
+	$scope.training = {text: "<ul><li>R Programming for Data Analysis</li><li>Visual Studio 2022</li><li>Notepad++ (to support PHP code development)</li><li>Ecommerce Technologies</li><li>XAMPP</li><li>JIRA for Issue Tracking & Project Management</li><li>HCI</li><li>AppleScript scripting language for automating processes</li><li>Adobe Fireworks for designing program graphics</li><li>Project Planning and Software Development Methodologies (both waterfall and agile)</li><li>AngularJS for building single page web applications</li></ul>"};
 	
 	$scope.recentExperience = [{header: "Software Engineer Internship at Sky", date: "Summer 2019", text: "Between June to August 2019 I worked as an intern for Sky Subscribers Limited. During the internship I learnt about the technologies used to build service software and the processes involved in delivering software, i.e. kanban boards, Jira. I specifically worked in a team building tests for a component of the software in Java, using the JUnit testing framework. Although I used git before in two university projects I became more familiar with using git during this internship as I used in on a regular basis to merge code to the main repository, and so I feel that this has prepared me for future internships and jobs. Overall this internship has taught me how software engineering works in the real world, and I have gained programming and software engineering skills that are important in the workplace.", imageURL1: "img/sky.jpg", imageURL2: "img/kanban.jpg"}];
 
