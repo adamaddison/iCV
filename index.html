@@ -17,7 +17,7 @@
 
 <body>
 <div ng-app="iCVModule" ng-controller="iCVController" id="application">  <div id="darkBackground"></div>
-<div id="eduBackground"> <img id="eduPic" src="img/stir.jpg" /> </div>
+<div id="eduBackground"> <img id="eduPic" src="img/soton.jpg" /> </div>
 
 	<div id="menuBar">
 		<h id="menuTitle" class="headerText" ng-click="testing()">ADAM ADDISON iCV</h>
@@ -63,7 +63,7 @@
 		<div id="profileContent">
 			<div id="profilePane" class="informationPanel">
 				<img id="profileImage" ng-src="{{profile.pictureURL}}" />
-				<p class="paragraphText">LinkedIn: adam.addison<br> Email: aaddison524@gmail.com<br></p>
+				<p class="paragraphText">LinkedIn: <a href="https://www.linkedin.com/in/adam-addison/" target="_blank">linkedin.com/in/adam-addison</a> <br> Email: <img ng-src="{{emailImageSrc}}" style="position: relative; top: 4px" /><br></p>
 				<span class="paragraphText" id="themeText">Dark Mode:</span> <img id="themeToggle" ng-click="toggleUITheme()" ng-src="{{toggleSwitchName}}"></img>
 			</div>
 			<p class="paragraphText" id="profileText">{{profile.text}}</p><br><br><br><br>
@@ -87,7 +87,7 @@
 		<div id="educationContent">
 			
 			<div id="dateLabel" class="translucentPanel headerText">
-				<span ng-click="expandDateLabel()" ng-mouseover="expandDateLabel()" id="currentSelectedDate">{{currentSelectedDate}}</span>
+				<span ng-click="expandDateLabel()" id="currentSelectedDate">{{currentSelectedDate}}</span>
 				<div class="dateRangeList headerText" ng-click="skipToEducationInstitute($index)" ng-repeat="range in dateRanges">{{range}}<br><br><br></div>
 			</div>
 			
