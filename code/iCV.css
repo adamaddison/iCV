@@ -9,6 +9,7 @@ body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
 		}
 .paragraphText{ color: black }
 .headerText{ color: black }
+#fullscreenWindow ul{ list-style-position: inside }
 
 @media only screen and (min-width: 1000px)
 {
@@ -352,15 +353,15 @@ body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
 		float: left;
 		text-align: center;
 		box-sizing: border-box;
+		overflow-x: scroll;
+		white-space: nowrap;
 		-webkit-transition: height 0.6s ease-out;
-		transition: height 0.6s ease-out
+		transition: height 0.6s ease-out;
+		overflow-y: hidden
 	}
 	.dateRangeList
 	{
-		visibility: hidden;
-		opacity: 0;
-		-webkit-transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
-		transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
+		visibility: hidden
 		
 	}
 	.dateRangeList:hover, #currentSelectedDate:hover
@@ -428,7 +429,7 @@ body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
 		box-sizing: border-box;
 		text-align: center;
 		border: 2px solid #daa520;
-		margin: -3px;
+		margin: -4px;
 		width: 33%;
 		min-width: 136px;
 		max-width: 300px
@@ -789,16 +790,15 @@ body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
 		height: 50px;
 		font-size: 18pt;
 		font-weight: bold;
+		overflow-x: scroll;
+		white-space: nowrap;
 		-webkit-transition: height 0.6s ease-out;
 		transition: height 0.6s ease-out;
+		overflow-y: hidden
 	}
 	.dateRangeList
 	{
-		visibility: hidden;
-		opacity: 0;
-		-webkit-transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
-		transition: visibility 0.6s ease-out, opacity 0.6s ease-out;
-		
+		visibility: hidden		
 	}
 	.dateRangeList:hover, #currentSelectedDate:hover
 	{
@@ -866,7 +866,7 @@ body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
 		box-sizing: border-box;
 		text-align: center;
 		border: 2px solid #daa520;
-		margin: -3px;
+		margin: -4px;
 		width: 33.3%
 		
 	}

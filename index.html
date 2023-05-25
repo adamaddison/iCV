@@ -92,7 +92,9 @@
 				<div class="dateRangeList headerText" ng-click="skipToEducationInstitute($index)" ng-repeat="range in dateRanges">{{range}}<br><br><br></div>
 			</div>
 			
-			<div class="eduInfo translucentPanel" ng-repeat="institute in institutes" id="eduPane{{$index}}"><img id="topArrow" ng-click="switchEducationInstitute(0)" src="icons/up.svg" />	<img id="bottomArrow" ng-click="switchEducationInstitute(1)" src="icons/down.svg" />
+			<div class="eduInfo translucentPanel" ng-repeat="institute in institutes" id="eduPane{{$index}}">
+<img id="topArrow" ng-show="currentEducationInstituteNumber != 0" ng-click="switchEducationInstitute(0)" src="icons/up.svg" />
+<img id="bottomArrow" ng-show="currentEducationInstituteNumber != INSTITUTE_COUNT-1" ng-click="switchEducationInstitute(1)" src="icons/down.svg" />
 				<h class="headerText" ng-bind-html="institute.name"></h>
 				<p class="paragraphText" ng-repeat="individualGradeModule in institute.moduleAndGrade" ng-bind-html="individualGradeModule"></p><br>
 				<div class="paragraphText" id="footnote">{{institute.footnote}}</div>
@@ -113,7 +115,7 @@
 					<div id="recentTextContainer">
 						<span class="headerText" id="recentHeader">{{recent.header}}</span><br>
 						<span class="paragraphText" id="recentDate">{{recent.date}}</span><br><br>
-						<div class="paragraphText" id="recentText">{{recent.text}}</div>
+						<div class="paragraphText" id="recentText" ng-bind-html="recent.text"></div>
 					</div>
 					<div id="recentImageContainer">
 						<img ng-src="{{recent.imageURL1}}" id="recentImage1"></img>
