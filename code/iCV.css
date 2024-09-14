@@ -540,6 +540,10 @@ body{ margin: 0px; font-family: -apple-system, BlinkMacSystemFont, sans-serif }
 		padding: 10px;
 		box-sizing: border-box
 	}
+	#trainingContent ul li, #skillsContent ul li
+	{
+		margin-bottom: 7px
+	}
 
 }
 
